@@ -1,5 +1,6 @@
 
 #include "DHT.h"
+#include "WiFiCredentials.h"
 
 #define DHTPIN 14
 
@@ -20,6 +21,8 @@ void setup() {
 void loop() {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
+  Serial.print(SSID);
+  Serial.print(PASSWORD);
 
 
   if (isnan(h) || isnan(t)) {
